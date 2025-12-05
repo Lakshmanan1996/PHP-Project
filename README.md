@@ -1,36 +1,69 @@
-README.md — Student Timetable Generator (DevOps + CI/CD + Kubernetes)
-🎓 Student Timetable Generator – Complete DevOps Project
+🎓 Student Timetable Generator – Full DevOps CI/CD Pipeline (Jenkins + Docker + Kubernetes)
 
-A fully automated CI/CD DevOps pipeline for deploying a PHP-based Student Timetable Generator using:
+This repository contains a PHP-based Student Timetable Generator application deployed using a complete end-to-end DevOps CI/CD pipeline.
+The project demonstrates real-world DevOps practices including:
 
-GitHub
+Automated build & deployments
 
-Jenkins CI/CD
+Docker containerization
 
-SonarQube Code Quality
+SonarQube code-quality scanning
 
-Docker & DockerHub
+Kubernetes orchestration
 
-Kubernetes (Minikube / AWS EKS)
+Nginx Ingress exposure
 
-Nginx Ingress Controller
+Zero-downtime rolling updates
 
-Rolling Updates & Zero-Downtime Deployment
+GitHub → Jenkins → Docker → Kubernetes integration
 
-📌 Project Overview
+🚀 Key Features
+🔹 Timetable Application
 
-This project automates the entire process of:
+PHP-based student timetable generator
 
-Pulling code from GitHub
+Easy UI for generating weekly schedules
 
-Running SonarQube code analysis
+Nginx + PHP-FPM backend
 
-Building Docker images
+🔹 DevOps Implementation
 
-Pushing image to DockerHub
+Fully automated CI/CD
 
-Deploying to Kubernetes cluster
+Dockerized application
 
-Exposing using Nginx Ingress
+Push to DockerHub
 
-Designed to demonstrate real-world DevOps pipeline, containerization, and Kubernetes orchestration.
+Kubernetes deployment
+
+Nginx ingress for external access
+
+SonarQube static code analysis
+
+Rolling updates (no downtime)
+
+🧱 Project Architecture
+Developer
+    ↓
+GitHub → Jenkins → SonarQube → Docker Build → DockerHub
+    ↓
+Kubernetes Cluster (Minikube / AWS EKS)
+    ↓
+Service → Ingress → Public Access
+
+📂 Folder Structure
+student-timetable-generator/
+│── src/
+│    ├── index.php
+│    ├── timetable.php
+│    ├── assets/
+│    └── include/
+│── Dockerfile
+│── nginx.conf
+│── Jenkinsfile
+│── sonar-project.properties
+│── k8s/
+│    ├── deployment.yaml
+│    ├── service.yaml
+│    ├── ingress.yaml
+│── README.md
