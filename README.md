@@ -57,26 +57,4 @@ graph TD
     G --> H[Public Access];
 The flow ensures that only high-quality, containerized code is deployed to the Kubernetes cluster (Minikube / AWS EKS).
 ______________________________________________________________________________________________________________________________
-📂 Folder Structure
-The repository is organized to clearly separate application code, Docker configuration, pipeline script, static analysis configuration, and Kubernetes manifests.
 
-student-timetable-generator/
-│
-│── src/                          # Application source code
-│    ├── index.php                # Main page
-│    ├── timetable.php            # Timetable generation logic
-│    ├── assets/                  # CSS, JS, Images
-│    └── include/                 # PHP includes
-│
-│── Dockerfile                    # Docker build instructions for the application image
-│── nginx.conf                    # Nginx configuration for the application
-│── Jenkinsfile                   # Groovy script defining the entire CI/CD pipeline
-│── sonar-project.properties      # SonarQube project configuration
-│
-│── k8s/                          # Kubernetes YAML manifests
-│    ├── deployment.yaml          # Defines the desired state of the application Pods
-│    ├── service.yaml             # Defines the internal K8s Service for the Deployment
-│    ├── ingress.yaml             # Defines the Nginx Ingress resource for external routing
-│
-│── README.md                     # This file
-______________________________________________________________________________________________________________________________
