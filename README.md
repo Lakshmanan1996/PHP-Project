@@ -1,7 +1,7 @@
 🎓 Student Timetable Generator – Full DevOps CI/CD Pipeline (Jenkins + Docker + Kubernetes)
-
 This repository contains a PHP-based Student Timetable Generator application deployed using a complete end-to-end DevOps CI/CD pipeline.
-The project demonstrates real-world DevOps practices including:
+
+The project is designed to demonstrate real-world DevOps practices for deploying a modern web application, including:
 
 Automated build & deployments
 
@@ -16,54 +16,65 @@ Nginx Ingress exposure
 Zero-downtime rolling updates
 
 GitHub → Jenkins → Docker → Kubernetes integration
-
+-----
 🚀 Key Features
 🔹 Timetable Application
+PHP-based student timetable generator.
 
-PHP-based student timetable generator
+Easy UI for generating weekly schedules.
 
-Easy UI for generating weekly schedules
-
-Nginx + PHP-FPM backend
+Uses a Nginx + PHP-FPM backend.
 
 🔹 DevOps Implementation
+Fully automated CI/CD using Jenkins.
 
-Fully automated CI/CD
+Dockerized application for environment consistency.
 
-Dockerized application
+Automatic Push to DockerHub upon successful build.
 
-Push to DockerHub
+Kubernetes deployment for scaling and management.
 
-Kubernetes deployment
+Nginx Ingress for robust external access and routing.
 
-Nginx ingress for external access
+SonarQube static code analysis for quality gates.
 
-SonarQube static code analysis
-
-Rolling updates (no downtime)
-
+Rolling updates for zero-downtime deployments.
+------------
 🧱 Project Architecture
-Developer
-    ↓
-GitHub → Jenkins → SonarQube → Docker Build → DockerHub
-    ↓
-Kubernetes Cluster (Minikube / AWS EKS)
-    ↓
-Service → Ingress → Public Access
+The CI/CD pipeline is triggered on code push to GitHub and follows these steps:
 
+Code snippet
+
+graph TD
+    A[Developer Push to GitHub] --> B(Jenkins Pipeline Triggered);
+    B --> C(SonarQube Code Scan);
+    C -->|If Successful| D(Docker Build & Push to DockerHub);
+    D --> E(Deploy to Kubernetes Cluster);
+    E --> F(Kubernetes Service);
+    F --> G(Nginx Ingress);
+    G --> H[Public Access];
+The flow ensures that only high-quality, containerized code is deployed to the Kubernetes cluster (Minikube / AWS EKS).
+-----------
 📂 Folder Structure
+The repository is organized to clearly separate application code, Docker configuration, pipeline script, static analysis configuration, and Kubernetes manifests.
+
 student-timetable-generator/
-│── src/
-│    ├── index.php
-│    ├── timetable.php
-│    ├── assets/
-│    └── include/
-│── Dockerfile
-│── nginx.conf
-│── Jenkinsfile
-│── sonar-project.properties
-│── k8s/
-│    ├── deployment.yaml
-│    ├── service.yaml
-│    ├── ingress.yaml
-│── README.md
+│
+│── src/                          # Application source code
+│    ├── index.php                # Main page
+│    ├── timetable.php            # Timetable generation logic
+│    ├── assets/                  # CSS, JS, Images
+│    └── include/                 # PHP includes
+│
+│── Dockerfile                    # Docker build instructions for the application image
+│── nginx.conf                    # Nginx configuration for the application
+│── Jenkinsfile                   # Groovy script defining the entire CI/CD pipeline
+│── sonar-project.properties      # SonarQube project configuration
+│
+│── k8s/                          # Kubernetes YAML manifests
+│    ├── deployment.yaml          # Defines the desired state of the application Pods
+│    ├── service.yaml             # Defines the internal K8s Service for the Deployment
+│    ├── ingress.yaml             # Defines the Nginx Ingress resource for external routing
+│
+│── README.md                     # This file
+----------------
