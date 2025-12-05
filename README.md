@@ -43,3 +43,24 @@ SonarQube static code analysis for quality gates.
 Rolling updates for zero-downtime deployments.
 ______________________________________________________________________________________________________________________________
 
+🧱 Project Architecture
+The CI/CD pipeline is triggered on code push to GitHub and follows these steps:
+
+Code snippet
+
+graph TD
+    A[Developer Push to GitHub] --> B(Jenkins Pipeline Triggered);
+    
+    B --> C(SonarQube Code Scan);
+    
+    C -->|If Successful| D(Docker Build & Push to DockerHub);
+    
+    D --> E(Deploy to Kubernetes Cluster);
+    
+    E --> F(Kubernetes Service);
+    
+    F --> G(Nginx Ingress);
+    
+    G --> H[Public Access];
+The flow ensures that only high-quality, containerized code is deployed to the Kubernetes cluster (Minikube / AWS EKS).
+______________________________________________________________________________________________________________________________
