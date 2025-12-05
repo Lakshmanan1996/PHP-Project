@@ -19,7 +19,7 @@ Zero-downtime rolling updates
 GitHub → Jenkins → Docker → Kubernetes integration
 ______________________________________________________________________________________________________________________________
 
-🚀 Key Features
+#🚀 Key Features
 🔹 Timetable Application
 PHP-based student timetable generator.
 
@@ -43,7 +43,7 @@ SonarQube static code analysis for quality gates.
 Rolling updates for zero-downtime deployments.
 ______________________________________________________________________________________________________________________________
 
-🧱 Project Architecture
+#🧱 Project Architecture
 The CI/CD pipeline is triggered on code push to GitHub and follows these steps:
 
 Code snippet
