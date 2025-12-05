@@ -34,20 +34,3 @@ Deploying to Kubernetes cluster
 Exposing using Nginx Ingress
 
 Designed to demonstrate real-world DevOps pipeline, containerization, and Kubernetes orchestration.
-
-🏗 Architecture
-Developer → GitHub → Jenkins → SonarQube → Docker Build → DockerHub →
-Kubernetes (Minikube/EKS) → Deploy → Nginx Ingress → Public URL
-
-📁 Folder Structure
-student-timetable-generator/
-│── src/
-│── Dockerfile
-│── nginx.conf
-│── Jenkinsfile
-│── sonar-project.properties
-│── k8s/
-│    ├── deployment.yaml
-│    ├── service.yaml
-│    ├── ingress.yaml
-│── README.md
