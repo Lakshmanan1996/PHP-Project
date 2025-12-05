@@ -1,5 +1,5 @@
 #🎓 Student Timetable Generator – Full DevOps CI/CD Pipeline (Jenkins + Docker + Kubernetes)
-
+--------------
 This repository contains a PHP-based Student Timetable Generator application deployed using a complete end-to-end DevOps CI/CD pipeline.
 
 The project is designed to demonstrate real-world DevOps practices for deploying a modern web application, including:
@@ -17,7 +17,7 @@ Nginx Ingress exposure
 Zero-downtime rolling updates
 **
 GitHub → Jenkins → Docker → Kubernetes integration
------
+
 🚀 Key Features
 🔹 Timetable Application
 PHP-based student timetable generator.
@@ -40,7 +40,7 @@ Nginx Ingress for robust external access and routing.
 SonarQube static code analysis for quality gates.
 
 Rolling updates for zero-downtime deployments.
-------------
+
 🧱 Project Architecture
 The CI/CD pipeline is triggered on code push to GitHub and follows these steps:
 
@@ -55,7 +55,7 @@ graph TD
     F --> G(Nginx Ingress);
     G --> H[Public Access];
 The flow ensures that only high-quality, containerized code is deployed to the Kubernetes cluster (Minikube / AWS EKS).
------------
+
 📂 Folder Structure
 The repository is organized to clearly separate application code, Docker configuration, pipeline script, static analysis configuration, and Kubernetes manifests.
 
@@ -78,4 +78,4 @@ student-timetable-generator/
 │    ├── ingress.yaml             # Defines the Nginx Ingress resource for external routing
 │
 │── README.md                     # This file
-----------------
+
