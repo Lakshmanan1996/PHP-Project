@@ -1,0 +1,152 @@
+-- phpMyAdmin SQL Dump
+-- version 2.11.6
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Mar 07, 2017 at 04:44 PM
+-- Server version: 5.0.51
+-- PHP Version: 5.2.6
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Database: `student_timetable`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `class_allot`
+--
+
+CREATE TABLE `class_allot` (
+  `cid` int(11) NOT NULL auto_increment,
+  `dname` text NOT NULL,
+  `day_cat` varchar(255) NOT NULL,
+  `class_cat` varchar(255) NOT NULL,
+  `class_name` varchar(255) NOT NULL,
+  `class_section` varchar(255) NOT NULL,
+  `room_no` varchar(255) NOT NULL,
+  PRIMARY KEY  (`cid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+
+--
+-- Dumping data for table `class_allot`
+--
+
+INSERT INTO `class_allot` (`cid`, `dname`, `day_cat`, `class_cat`, `class_name`, `class_section`, `room_no`) VALUES
+(1, 'Computer Science', 'Men', 'PG', 'MCA', 'A', 'C1'),
+(4, 'Computer Science', 'Men', 'UG', 'BSC', 'B', 'B4'),
+(5, 'Computer Science', 'Men', 'PG', 'MCA', 'B', 'C3'),
+(6, 'Computer Science', 'Men', 'UG', 'BSC', 'A', 'C6'),
+(7, 'Computer Science', 'Men', 'PG', 'MSC', 'A', 'C8'),
+(8, 'Civil', 'Men', '', 'BE', 'A', 'B Block');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `department`
+--
+
+CREATE TABLE `department` (
+  `did` int(11) NOT NULL auto_increment,
+  `dname` text NOT NULL,
+  PRIMARY KEY  (`did`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `department`
+--
+
+INSERT INTO `department` (`did`, `dname`) VALUES
+(1, 'Civil');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `register`
+--
+
+CREATE TABLE `register` (
+  `id` int(11) NOT NULL auto_increment,
+  `cdate` varchar(50) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `cno` varchar(50) NOT NULL,
+  `dept` varchar(50) NOT NULL,
+  `uname` varchar(50) NOT NULL,
+  `pword` varchar(50) NOT NULL,
+  `address` text NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `register`
+--
+
+INSERT INTO `register` (`id`, `cdate`, `name`, `email`, `cno`, `dept`, `uname`, `pword`, `address`) VALUES
+(1, '21-02-2017', 'raj', 'raj@gmail.com', '9878773635', 'cs', 'raj', '123', 'trichy');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `staff_detail`
+--
+
+CREATE TABLE `staff_detail` (
+  `id` int(11) NOT NULL auto_increment,
+  `cdate` varchar(100) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `cno` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `dept` varchar(100) NOT NULL,
+  `staff_id` varchar(100) NOT NULL,
+  `pword` varchar(100) NOT NULL,
+  `address` text NOT NULL,
+  `specialist` varchar(100) NOT NULL,
+  `photo` text NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `staff_detail`
+--
+
+INSERT INTO `staff_detail` (`id`, `cdate`, `name`, `cno`, `email`, `dept`, `staff_id`, `pword`, `address`, `specialist`, `photo`) VALUES
+(1, '07-03-2017', 'Kannan', '9798378767', 'kannan@gmail.com', 'Civil', 'STAFF1', 'STAFF1', 'trichy', 'Elective', 't1.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `student_detail`
+--
+
+CREATE TABLE `student_detail` (
+  `id` int(11) NOT NULL auto_increment,
+  `cdate` varchar(100) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `cno` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `dept` varchar(100) NOT NULL,
+  `stud_id` varchar(100) NOT NULL,
+  `pword` varchar(100) NOT NULL,
+  `address` text NOT NULL,
+  `photo` text NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+
+--
+-- Dumping data for table `student_detail`
+--
+
+INSERT INTO `student_detail` (`id`, `cdate`, `name`, `cno`, `email`, `dept`, `stud_id`, `pword`, `address`, `photo`) VALUES
+(1, '05-01-2017', 'Muthupandi', '99844851221', 'mu@gmail.com', 'computer Science', 'STAFF1', 'STAFF1', 'Trichy', 't1.jpg'),
+(2, '05-01-2017', 'Mujeebur', '9876543211', 'beer@gmail.com', 'computer Science', 'STAFF2', 'STAFF2', 'Puthur', 't15.jpg'),
+(3, '05-01-2017', 'Santhoshini', '8989898976', 'san@gmail.com', 'computer Science', 'STAFF3', 'STAFF3', 'pattukottai', 't11.jpg'),
+(4, '05-01-2017', 'Geetha', '9787654345', 'gee@gmail.com', 'computer Science', 'STAFF4', 'STAFF4', 'paapanadu', 't11.jpg');
