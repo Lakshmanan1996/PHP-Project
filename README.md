@@ -1,4 +1,4 @@
-#🎓 Student Timetable Generator – Full DevOps CI/CD Pipeline (Jenkins + Docker + Kubernetes)
+🎓 Student Timetable Generator – Full DevOps CI/CD Pipeline (Jenkins + Docker + Kubernetes)
 --------------
 This repository contains a PHP-based Student Timetable Generator application deployed using a complete end-to-end DevOps CI/CD pipeline.
 
@@ -20,6 +20,7 @@ GitHub → Jenkins → Docker → Kubernetes integration
 ______________________________________________________________________________________________________________________________
 
 #🚀 Key Features
+-
 🔹 Timetable Application
 PHP-based student timetable generator.
 
@@ -44,6 +45,7 @@ Rolling updates for zero-downtime deployments.
 ______________________________________________________________________________________________________________________________
 
 #🧱 Project Architecture
+-
 The CI/CD pipeline is triggered on code push to GitHub and follows these steps:
 
 Code snippet
